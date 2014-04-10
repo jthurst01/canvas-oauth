@@ -1,0 +1,40 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Canvas SDK</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+        <servlet>
+                <servlet-name>oauth</servlet-name>
+                <servlet-class>servlets.OAuthServlet</servlet-class>
+		<init-param>   
+        		<description>The clientId</description>   
+        		<param-name>clientId</param-name>   
+        		<param-value>3MVG9Iu66FKeHhIO1lHVQOl_XJF2K7LEafuyvt1XYskCDYquq_a.IwXeV5gmGvVrkEcnDHn8JzsPeRknjwIf2</param-value>   
+    		</init-param>
+		<init-param>
+                        <description>The clientSecret</description>                     
+                        <param-name>clientSecret</param-name>   
+                        <param-value>255115888342038690</param-value>                
+                </init-param>
+		<init-param>
+                        <description>The redirectUri</description>                     
+                        <param-name>redirectUri</param-name>   
+                        <param-value>https://oauth-canvas.herokuapp.com/sdk/callback.html</param-value>                
+                </init-param>
+		<init-param>
+                        <description>The environment</description>                     
+                        <param-name>environment</param-name>   
+                        <param-value>https://mobile2.t.salesforce.com</param-value>                
+                </init-param>  
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>oauth</servlet-name>
+                <url-pattern>/oauth</url-pattern>
+        </servlet-mapping>
+
+</web-app>
