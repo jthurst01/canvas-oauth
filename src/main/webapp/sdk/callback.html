@@ -3,24 +3,12 @@
 <head>
 <title>Callback Refresh Window</title>
 <script type="text/javascript">
-    function closeMe (){
-	self.close();
-    }
+    try {
+        window.opener.Sfdc.canvas.oauth.childWindowUnloadNotification(self.location.hash);
+    } catch (ignore) {}
+    self.close();
 </script>
 </head>
 <body>
-<div id='error'></div>
-
-<script type="text/javascript">
-    try {
-        //alert("Callback");
-        parent.window.opener.Sfdc.canvas.oauth.childWindowUnloadNotification(self.location.hash);
-        self.close();
-
-//	closeMe();
-    } catch (ignore)
-	 {document.getElementById('error').innerHTML=ignore;}
-</script>
-<input id="close-btn" type="button" value="Close this window"  onclick="closeMe();"/>
 </body>
 </html>
